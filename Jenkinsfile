@@ -1,9 +1,8 @@
 pipeline {
     agent { 
-        node {
-            label 'jenkins_agent_with_docker'
-            }
-      }
+        dockerfile true
+    }
+      
     triggers{
         pollSCM '* * * * *'
     }
