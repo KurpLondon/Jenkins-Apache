@@ -1,7 +1,7 @@
 pipeline {
     agent { 
         node {
-            label 'docker-jenkins-agent-withpython-kurp'
+            label 'jenkins_agent_with_docker'
             }
       }
     triggers{
