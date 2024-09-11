@@ -1,7 +1,7 @@
 pipeline {
     agent { 
         node {
-            label 'jenkins-agent-with-docker-installer'
+            label 'jenkins_agent_with_docker'
             }
       }
     triggers{
