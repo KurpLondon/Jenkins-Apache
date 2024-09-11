@@ -1,8 +1,6 @@
 pipeline {
     agent { 
-        node {
-            label 'jenkins_agent_with_docker'
-            }
+        Dockerfile true
       }
     triggers{
         pollSCM '* * * * *'
@@ -12,8 +10,8 @@ pipeline {
             steps {
                 echo "Creating Web Server Container ..."
                 sh '''
-                docker -H 172.18.0.2:2375 build -t my-apache2 .
-                docker -H 172.18.0.2:2375 run -dit --name my-running-app -p 8081:80 my-apache2
+                docker -H 172.18.0.2:2375 build -t my-apache3 .
+                docker -H 172.18.0.2:2375 run -dit --name my-running-app -p 8082:80 my-apache3
                 '''
                
             }
