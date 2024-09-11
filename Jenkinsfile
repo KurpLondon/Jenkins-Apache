@@ -10,6 +10,7 @@ pipeline {
             steps {
                 echo "Creating Web Server Container ..."
                 sh '''
+                DOCKER_OPTS="--dns 192.168.0.3 --dns 8.8.8.8"
                 docker -H 172.18.0.2:2375 build -t my-apache3 .
                 docker -H 172.18.0.2:2375 run -dit --name my-running-app -p 8082:80 my-apache3
                 '''
